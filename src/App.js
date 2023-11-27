@@ -7,6 +7,7 @@ import CategoriesPage from './page/CategoriesPage';
 import Header from './component/Header';
 import IngredientsPage from './component/IngredientsPage';
 import CocktailDetailsPage from './page/CocktailDetailsPage';
+import CreateCocktailPage from './page/CreateCocktailPage';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path='/categorie' element={<CategoriesPage/>} />
         <Route path='/ingredients' element={<IngredientsPage/>}/>
         <Route path='/liste/detailsPage/:id' element={<CocktailDetailsPage />}/>
+        <Route path='/cocktails/create' element={<CreateCocktailPage />} />
+
        </Routes>
        </BrowserRouter>
        

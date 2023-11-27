@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import Header from "../component/Header";
+
 import CocktailCard from "../component/CocktailCard";
+import Header from "../component/Header";
 
 function CocktailRandomPage (){
     const [cocktailRandom, setCocktailRandom] = useState(null);
