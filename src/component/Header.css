@@ -1,0 +1,19 @@
+.app-link{
+ 
+    color:aliceblue;
+    font-family: fantasy ;
+    
+    font-variant:small-caps;
+   
+
+}
+ul,li{
+    
+    display: flex;
+    flex-direction: row;
+    
+ 
+    width: 1000px;
+}
+
+

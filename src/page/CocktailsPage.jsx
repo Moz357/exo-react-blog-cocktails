@@ -1,9 +1,14 @@
 import { useState } from "react";
 
-function CocktailsPage() {
-  const [cocktails, setCocktails] = useState(null);
+import { Link } from "react-router-dom";
+import CocktailCard from "../component/CocktailCard";
+import Header from "../component/Header";
 
-  if (!cocktails) {
+
+function CocktailsPage() {
+  const [cocktail, setCocktails] = useState(null);
+
+  if (!cocktail) {
     // fonction anonyme asynchrone (elle pas de nom)
     // qui s'autoinvoque
     // cela permet d'effectuer des opérations asynchrones (fetch etc)
@@ -39,8 +44,21 @@ function CocktailsPage() {
       }
       */
     return (
+        <>
         
-        <main>
+        <Header />
+ <main>
+        {cocktail ? (
+          <div className="cocktails-container">
+            {cocktail.map((cocktail) => {
+              return <CocktailCard cocktailToDisplay={cocktail} />;
+            })}
+          </div>
+        ) : (
+          <img src="https://media4.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" alt="spinner" />
+        )}
+      </main>
+  {/**     <main>
             {cocktails ? (
                 // // ici on utilise la fonction map pour récupérer le tableau cocktails et on affiche le nom des cocktails (ici avec cocktail.strDrink)
             <>
@@ -48,7 +66,8 @@ function CocktailsPage() {
                 return (
                 <article>
                     <h2>{cocktail.strDrink}</h2>
-                    <img src= {cocktail.strDrinkThumb} alt="" />
+                    <img src= {cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+                    <Link to={`/liste/detailsPage/${cocktail.idDrink}`}>Voir le detail :</Link>
                 </article>
                 );
             })}
@@ -56,7 +75,8 @@ function CocktailsPage() {
         ) : (
             <p>Cocktails en cours de chargement</p>
         )}
-        </main>
+        </main> */}
+        </>
     
     )};
    export default CocktailsPage ;
